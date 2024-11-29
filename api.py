@@ -29,7 +29,7 @@ def upload_sensor_data():
         data['weather'] = weather_data
         
         # Insérer dans la collection MongoDB
-        collection = db['Activity']
+        collection = db['Sensor']
         result = collection.insert_one(data)
         return jsonify({"message": "Data inserted successfully", "id": str(result.inserted_id)}), 201
 
